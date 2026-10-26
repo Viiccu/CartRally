@@ -1,0 +1,6 @@
+max speed: 25 - 50
+reverse speed: 5 - 10
+acceleration: 20
+weight: 5 - 20
+coast: 2 - 5
+brake: 5 - 10
