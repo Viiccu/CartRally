@@ -99,6 +99,7 @@ public class Drivable : MonoBehaviour
     public ParticleSystem dust;
 
     public float Speed => speed;
+    public bool Braking { get; private set; } // holding reverse while still rolling forward
     public event System.Action<float> Crashed; // strength 0..1, used by CartCamera for shake
 
     Rigidbody rb;
@@ -148,6 +149,7 @@ public class Drivable : MonoBehaviour
         bool gas = kb != null && kb.wKey.isPressed;
         bool back = kb != null && kb.sKey.isPressed;
         float top = onMud ? maxSpeed * mudSpeedMultiplier : maxSpeed;
+        Braking = back && !gas && speed > 0;
 
         // 60: acceleration used to be added once per frame; this keeps that tuning at 60 fps on any frame rate
         float accel = acceleration / weight * 60f * dt;
