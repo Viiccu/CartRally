@@ -107,3 +107,5 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+# shortcut: car PSDs exceed GitHub 100MB limit; remove these lines once tracked via Git LFS
+/Assets/Retro Cartoon Car Cicada/Textures/*.psd
